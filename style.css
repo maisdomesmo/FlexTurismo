@@ -71,7 +71,7 @@ div img{
 }
 /*===============INTRODUCTION=================*/
 .apresentacao{
-    height: 100vh;
+    height: 100%;
     align-items: center;
     justify-content: space-between;
 }
@@ -82,6 +82,10 @@ div img{
     color: var(--primary-color);
     font-size: 48px;
     margin-bottom: 10px;
+}
+
+.texto-apresentacao p{
+    padding-block: 10px;
 }
 
 
@@ -119,7 +123,7 @@ div img{
 /*===============SERVICES=================*/
 .container-externo{
     background-color: var(--primary-color);
-    width: 100%;
+    
 }
 
 #services{
@@ -252,23 +256,52 @@ footer .footer{
 
 /*===============MOBILE=================*/
 @media(max-width: 992px){
+    /*===============GERAL=================*/
     .flex-container{
         flex-direction: column;
     }
-
+    /*===============APRESENTAÇÃO=================*/
     .apresentacao{
         flex-direction: column-reverse;
+        margin-block: 50px;
     }
-    .apresentacao .texto-apresentacao{
+    .apresentacao .texto-apresentacao{ 
         width: 100%;
+        text-align: center;
     }
+    .apresentacao .texto-apresentacao h1{
+        max-width: 90vw;
+        margin-inline: auto;
+    }
+    .apresentacao a{
+        justify-content: center;
+        margin-inline: auto;
+    }
+
+/*===============ABOUT=================*/
     #about{
         flex-direction: column-reverse;
     }
+    #about h2,
+    #about p{
+        margin-left: 2%;
+    }
     #about img{
-        min-width: 320px;
+        min-width: 220px;
+        max-width: 100vw;
         margin: auto;
     }
+    #services{
+        margin-top: 2%;
+        text-align: center;
+    }
+    #services img{
+        width: min(30vw, 160px);
+        height: min(20vh, 210px);
+    }
+
+
+/*===============SERVICES=================*/
     .list-services{
     flex-direction: column;
     }
@@ -276,16 +309,41 @@ footer .footer{
         width: 50%;
         margin: auto;
     }
+
+/*===============PLANOS=================*/
+    #planos h2{
+        text-align: center;
+        margin-block: 4%;
+    }
     .list-planos{
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 20px;
+        margin-left: 0;
     }
     .list-planos .item-planos{
-        max-width:  90%;
+        max-width:  75vw;
         margin: auto;
-        width: 100%;
+        width: 100vw;
         margin-bottom: 20px;
-    }
     
+    }
+/*===============FOOTER=================*/
+    footer{
+        text-align: center;
+        line-height: 20px;
+        padding-top: 20px;
+    }
 }
+/*@media(max-width: 320px){
+    .flex-container{
+        min-width: 100px;
+        width: min(100vw, 320px);
+    }
+    .container-externo{
+        width: 100vw;
+    }
+    *{
+      --color:1;  
+    }
+}*/
